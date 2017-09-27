@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AndroidArchitecture</string>
-    <string name="title_activity_splash">SplashActivity</string>
+
+    <!--Sign In-->
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in">Sign In</string>
 </resources>

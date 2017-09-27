@@ -1,4 +1,4 @@
-package com.example.androidarchitecture.base
+package com.example.androidarchitecture.ui.base
 
 import android.annotation.SuppressLint
 import android.os.Bundle
