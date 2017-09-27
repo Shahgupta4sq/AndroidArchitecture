@@ -10,5 +10,10 @@ data class Resource<T>(
         fun <T> loading(data: T?): Resource<T?> {
             return Resource(Status.LOADING, data)
         }
+
+        @JvmStatic
+        fun <T> custom(status: Status?, data: T?, message: String?): Resource<T?> {
+            return Resource(status ?: Status.ERROR, data, message)
+        }
     }
 }

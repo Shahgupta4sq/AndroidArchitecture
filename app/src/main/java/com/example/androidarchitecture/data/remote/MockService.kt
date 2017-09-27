@@ -6,6 +6,7 @@ import com.example.androidarchitecture.data.model.User
 import com.example.androidarchitecture.data.model.request.SignInRequest
 import com.example.androidarchitecture.data.model.response.SignInResponse
 import io.reactivex.Single
+import java.io.File
 
 class MockService {
 
@@ -30,7 +31,7 @@ class MockService {
         }
     }
 
-    fun getProfile(accessToken: String, id: Long): Single<ApiResponse<User?>?> {
+    fun getProfile(accessToken: String?, id: Long): Single<ApiResponse<User?>?> {
         if (accessToken != this.accessToken) {
             return Single.create { emitter ->
                 emitter.onSuccess(ApiResponse(Status.INVALID_ACCESS_TOKEN, null))
@@ -48,8 +49,8 @@ class MockService {
         }
     }
 
-    fun updateProfile(accessToken: String, input: User): Single<ApiResponse<User?>?> {
-        if (accessToken != this.accessToken){
+    fun updateProfile(accessToken: String?, input: User): Single<ApiResponse<User?>?> {
+        if (accessToken != this.accessToken) {
             return Single.create { emitter ->
                 emitter.onSuccess(ApiResponse(Status.INVALID_ACCESS_TOKEN, null))
             }
@@ -63,6 +64,18 @@ class MockService {
         } ?: run {
             return Single.create { emitter ->
                 emitter.onSuccess(ApiResponse(Status.INVALID_USER, null))
+            }
+        }
+    }
+
+    fun uploadImage(image: File?): Single<Pair<Status, String?>> {
+        image?.let {
+            return Single.create { emitter ->
+                emitter.onSuccess(Pair(Status.SUCCESS, image.path))
+            }
+        } ?: run {
+            return Single.create { emitter ->
+                emitter.onSuccess(Pair(Status.IMAGE_UPLOAD_FAILED, null))
             }
         }
     }
