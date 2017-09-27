@@ -11,7 +11,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class UserPreference @Inject constructor(val sharedPreferences: SharedPreferences) {
+class UserPreference @Inject constructor(private val sharedPreferences: SharedPreferences) {
 
     companion object {
         private val TAG = this::class.java.simpleName
@@ -79,7 +79,7 @@ class UserPreference @Inject constructor(val sharedPreferences: SharedPreference
         editor.apply()
     }
 
-    fun getStorePrefs(): Flowable<User?> {
+    fun getUser(): Flowable<User?> {
         var user: User? = null
         var city: City? = null
         var gender: Gender? = null

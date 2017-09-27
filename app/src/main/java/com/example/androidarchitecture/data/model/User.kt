@@ -8,4 +8,7 @@ data class User(
         var bio: String?,
         var avatar: String?,
         var city: City?,
-        var gender: Gender?)
+        var gender: Gender?){
+
+    constructor(id: Long, email: String): this(id, email, null, null, null, null, null, null)
+}
