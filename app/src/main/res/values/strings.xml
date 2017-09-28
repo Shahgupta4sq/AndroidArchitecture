@@ -5,4 +5,7 @@
     <string name="sign_in_email">Email</string>
     <string name="sign_in_password">Password</string>
     <string name="sign_in">Sign In</string>
+
+    <!--home-->
+    <string name="welcome">Welcome!</string>
 </resources>
