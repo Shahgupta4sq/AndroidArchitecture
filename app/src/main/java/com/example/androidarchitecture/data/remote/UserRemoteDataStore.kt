@@ -25,6 +25,6 @@ class UserRemoteDataStore @Inject constructor(private val mockService: MockServi
     }
 
     fun uploadImage(uri: Uri): Single<Pair<Status, String?>> {
-        return mockService.uploadImage(File(uri.path))
+        return mockService.uploadImage(uri)
     }
 }

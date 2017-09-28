@@ -3,6 +3,7 @@ package com.example.androidarchitecture
 import android.app.Activity
 import android.app.Application
 import com.example.androidarchitecture.di.DaggerAppComponent
+import com.facebook.drawee.backends.pipeline.Fresco
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -21,6 +22,8 @@ class MyApplication : Application(), HasActivityInjector {
                 .application(this)
                 .build()
                 .inject(this)
+
+        Fresco.initialize(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {

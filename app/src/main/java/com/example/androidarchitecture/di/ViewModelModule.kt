@@ -1,6 +1,7 @@
 package com.example.androidarchitecture.di
 
 import android.arch.lifecycle.ViewModel
+import com.example.androidarchitecture.ui.editprofile.EditProfileViewModel
 import com.example.androidarchitecture.ui.signin.SignInViewModel
 import com.example.androidarchitecture.ui.splash.SplashViewModel
 import dagger.Binds
@@ -20,4 +21,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SignInViewModel::class)
     internal abstract fun bindSignInViewModel(signInViewModel: SignInViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EditProfileViewModel::class)
+    internal abstract fun bindEditProfileViewModel(editProfileViewModel: EditProfileViewModel): ViewModel
 }

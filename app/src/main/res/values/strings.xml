@@ -1,11 +1,42 @@
 <resources>
     <string name="app_name">AndroidArchitecture</string>
 
+    <!--edit profile-->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_profile_first_name">First name</string>
+    <string name="edit_profile_last_name">Last name</string>
+    <string name="edit_profile_bio">Bio</string>
+    <string name="edit_profile_email">Email</string>
+    <string name="edit_profile_city">Home city</string>
+    <string name="edit_profile_gender">Gender</string>
+    <string name="edit_profile_save">Save</string>
+    <string name="edit_profile_change_photo">Change your profile photo</string>
+    <string name="edit_profile_select_city">Select city</string>
+    <string name="edit_profile_select_gender">Select Gender</string>
+
+    <!--home-->
+    <string name="welcome">Welcome!</string>
+
     <!--Sign In-->
     <string name="sign_in_email">Email</string>
     <string name="sign_in_password">Password</string>
     <string name="sign_in">Sign In</string>
 
-    <!--home-->
-    <string name="welcome">Welcome!</string>
+    <array name="change_photo">
+        <item>Use the Camera</item>
+        <item>Pick from Gallery</item>
+    </array>
+
+    <array name="select_city">
+        <item>New York City</item>
+        <item>Boston</item>
+        <item>Chicago</item>
+        <item>San Francisco</item>
+        <item>Los Angeles</item>
+    </array>
+
+    <array name="select_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
 </resources>

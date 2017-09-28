@@ -15,6 +15,7 @@ import com.example.androidarchitecture.R
 import com.example.androidarchitecture.data.model.Status
 import com.example.androidarchitecture.ui.base.BaseFragment
 import com.example.androidarchitecture.ui.base.FragmentContainerActivity
+import com.example.androidarchitecture.ui.editprofile.EditProfileFragment
 import com.example.androidarchitecture.ui.home.HomeFragment
 import com.example.androidarchitecture.util.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_sign_in.*
@@ -57,9 +58,13 @@ class SignInFragment : BaseFragment() {
             Status.EMPTY_PASSWORD -> Toast.makeText(activity, "Please enter password!", Toast.LENGTH_SHORT).show()
             Status.INVALID_PASSWORD -> Toast.makeText(activity, "Password should be of minimum 6 characters", Toast.LENGTH_SHORT).show()
             Status.SIGN_UP -> {
-                Toast.makeText(activity, "SIGN_UP", Toast.LENGTH_SHORT).show()
+                startActivity(EditProfileFragment.newIntent(activity))
+                activity.finish()
             }
-            Status.SIGN_IN -> startActivity(HomeFragment.newIntent(activity))
+            Status.SIGN_IN -> {
+                startActivity(HomeFragment.newIntent(activity))
+                activity.finish()
+            }
             Status.INVALID_CREDENTIALS -> Toast.makeText(activity, "Either email or password is incorrect", Toast.LENGTH_SHORT).show()
             Status.SERVER_CONNECTION_ERROR -> Toast.makeText(activity, "Unable to connect to server, please try again!", Toast.LENGTH_SHORT).show()
             else -> Toast.makeText(activity, "Something went wrong, please try again!", Toast.LENGTH_SHORT).show()

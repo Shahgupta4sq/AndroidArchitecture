@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import com.example.androidarchitecture.R
 import com.example.androidarchitecture.ui.base.BaseActivity
+import com.example.androidarchitecture.ui.editprofile.EditProfileFragment
 import com.example.androidarchitecture.ui.signin.SignInFragment
 import com.example.androidarchitecture.util.ViewModelFactory
 import io.reactivex.Observable
@@ -36,6 +37,8 @@ class SplashActivity : BaseActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     if (viewModel.isSignedIn()) {
+                        startActivity(EditProfileFragment.newIntent(this))
+                        finish()
                     } else {
                         startActivity(SignInFragment.newIntent(this))
                         finish()

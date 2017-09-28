@@ -119,7 +119,7 @@ class UserPreference @Inject constructor(private val sharedPreferences: SharedPr
     }
 
     /*
-    * This method is only used for mock service
+    * This method is used to get user data mock service
     * */
     fun getMockUser(): User? {
         var user: User? = null
