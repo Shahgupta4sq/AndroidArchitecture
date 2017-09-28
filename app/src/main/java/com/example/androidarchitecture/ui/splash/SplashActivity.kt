@@ -38,6 +38,7 @@ class SplashActivity : BaseActivity() {
                     if (viewModel.isSignedIn()) {
                     } else {
                         startActivity(SignInFragment.newIntent(this))
+                        finish()
                     }
                 }
     }

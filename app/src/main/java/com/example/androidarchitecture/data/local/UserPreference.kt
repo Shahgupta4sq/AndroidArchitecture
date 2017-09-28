@@ -117,4 +117,23 @@ class UserPreference @Inject constructor(private val sharedPreferences: SharedPr
         editor.clear()
         editor.apply()
     }
+
+    /*
+    * This method is only used for mock service
+    * */
+    fun getMockUser(): User? {
+        var user: User? = null
+        var city: City? = null
+        var gender: Gender? = null
+        if (cityId != 0 && !cityName.isNullOrBlank()) {
+            city = City(cityId, cityName!!)
+        }
+        if (!this.gender.isNullOrBlank()) {
+            gender = Gender.valueOf(this.gender!!)
+        }
+        if (id != 0L && !email.isNullOrBlank()) {
+            user = User(id, email!!, firstName, lastName, bio, avatar, city, gender)
+        }
+        return user
+    }
 }
